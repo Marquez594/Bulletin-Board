@@ -1,7 +1,13 @@
+import AddNew from "../component/add"
+import Nav from "../component/nav"
 function Home(){
     return(
-        <div>
-            <h1>This is home</h1>
+        <div className="min-h-[200vh] bg-[#120121]">
+            <Nav></Nav>
+            <AddNew></AddNew>
+            <div className="w-10 h-10 bg-red-500">
+
+            </div>
         </div>
     )
 }

@@ -14,7 +14,7 @@ loginRouter.post("/login", async (req, res) => {
     });
 
     if (!data.session) {
-      return res.status(400).json({ message: "Session not found" });
+      return res.status(400).json({ error: "Session not found" });
     }
 
     if (error) {
@@ -32,3 +32,5 @@ loginRouter.post("/login", async (req, res) => {
     return res.status(500).json({ error: error.message });
   }
 });
+
+export default loginRouter;

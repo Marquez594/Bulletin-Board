@@ -1,0 +1,28 @@
+import { useState } from "react";
+import Pfp from "../../public/pfp.png";
+
+function Nav() {
+  const [openNav, setOpenNav] = useState(false);
+  return (
+    <nav className=" fixed w-fit">
+      <button
+        className="w-10 h-10 hover:cursor-pointer absolute left-5 top-5 z-10 bg-[#120121] rounded-full"
+        onClick={() => setOpenNav(!openNav)}
+      >
+        <img src={Pfp}></img>
+      </button>
+
+      <div
+        className={`bg-[#2a1f36] w-1/6 full h-screen pt-20 text-white p-5 fixed transition-transform ease-in-out duration-100  ${openNav ? "translate-x-0" : "-translate-x-full"}`}
+      >
+        <div className="flex flex-col gap-5 text-2xl *:hover:cursor-pointer">
+          <button className="w-fit">Home</button>
+          <button className="w-fit">My Post</button>
+          <button className="w-fit">Settings</button>
+        </div>
+      </div>
+    </nav>
+  );
+}
+
+export default Nav;

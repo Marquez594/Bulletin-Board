@@ -2,6 +2,7 @@ import express from "express";
 import router from "./routes/signup.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import loginRouter from "./routes/login.js";
 
 const app = express();
 app.use(
@@ -21,6 +22,8 @@ app.get("/get", (req, res) => {
   console.log("Hello from get");
 });
 app.use("/api/auth", router);
+
+app.use("/api/auth", loginRouter);
 
 app.listen(3000, () => {
   console.log("Server is running");
