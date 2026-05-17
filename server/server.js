@@ -3,6 +3,9 @@ import router from "./routes/signup.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import loginRouter from "./routes/login.js";
+import addRouter from "./routes/addpost.js";
+import getRouter from "./routes/getpost.js";
+import userRouter from "./routes/user.js";
 
 const app = express();
 app.use(
@@ -25,6 +28,11 @@ app.use("/api/auth", router);
 
 app.use("/api/auth", loginRouter);
 
+app.use("/api", addRouter);
+
+app.use("/api", getRouter);
+
+app.use("/api", userRouter);
 app.listen(3000, () => {
   console.log("Server is running");
 });
